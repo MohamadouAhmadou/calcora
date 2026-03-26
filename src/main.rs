@@ -19,6 +19,16 @@ fn subtration(a: f32, b: f32) -> f32 {
     return a - b;
 } 
 
+// MULTIPLICATION FUNCTION
+fn multiplication(a: f32, b: f32) -> f32 {
+    return a * b;
+}
+
+// DIVISION FUNCTION
+fn division(a: f32, b: f32) -> f32{
+   // division by zero will be handle later
+    return a / b;
+}
 
 fn main() {
     //first input
@@ -31,6 +41,8 @@ fn main() {
 
     println!("The sum of {} and {} is {}.", number1, number2, addition(number1, number2));
     println!("The subtracton of {} and {} is {}.", number1, number2, subtration(number1, number2));
+    println!("The multiplication of {} and {} is {}.", number1, number2, multiplication(number1, number2));
+    println!("The division of {} and {} is {}.", number1, number2, division(number1, number2));
 
     //After creating all functions(subtration, multiplication, and division), loop and match will be use
 }
