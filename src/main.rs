@@ -31,6 +31,7 @@ fn division(a: f32, b: f32) -> f32{
 }
 
 fn main() {
+     loop {
     //first input
     println!("Enter the first number: ");
     let number1 = user_input();
@@ -39,10 +40,29 @@ fn main() {
     println!("Enter the second number: ");
     let number2 = user_input();
 
-    println!("The sum of {} and {} is {}.", number1, number2, addition(number1, number2));
-    println!("The subtracton of {} and {} is {}.", number1, number2, subtration(number1, number2));
-    println!("The multiplication of {} and {} is {}.", number1, number2, multiplication(number1, number2));
-    println!("The division of {} and {} is {}.", number1, number2, division(number1, number2));
+
+   
+        println!("OPTION");
+        println!("1. Addition");
+        println!("2. Subtraction");
+        println!("3. Multiplication");
+        println!("4. Division");
+        println!("0. Exit");
+
+        println!("Choose oparator: ");
+        let oparator = user_input();
+
+           match oparator {
+        0.0 => break,
+        1.0 => println!("The sum of {} and {} is {}.", number1, number2, addition(number1, number2)),
+        2.0 => println!("The subtracton of {} and {} is {}.", number1, number2, subtration(number1, number2)),
+        3.0 => println!("The multiplication of {} and {} is {}.", number1, number2, multiplication(number1, number2)),
+        4.0 => println!("The division of {} and {} is {}.", number1, number2, division(number1, number2)),
+        _ => println!("Can exit with 0."),
+    }
+    }
+  
+    
 
     //After creating all functions(subtration, multiplication, and division), loop and match will be use
 }
