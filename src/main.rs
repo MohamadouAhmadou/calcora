@@ -54,10 +54,10 @@ fn main() {
 
            match oparator {
         0.0 => break,
-        1.0 => println!("The sum of {} and {} is {}.", number1, number2, addition(number1, number2)),
-        2.0 => println!("The subtracton of {} and {} is {}.", number1, number2, subtration(number1, number2)),
-        3.0 => println!("The multiplication of {} and {} is {}.", number1, number2, multiplication(number1, number2)),
-        4.0 => println!("The division of {} and {} is {}.", number1, number2, division(number1, number2)),
+        1.0 => println!("{number1} + {number2} = {}.", addition(number1, number2)),
+        2.0 => println!("{number1} - {number2} = {}.", subtration(number1, number2)),
+        3.0 => println!("{number1} and {number2} = {}.", multiplication(number1, number2)),
+        4.0 => println!("{number1} / {number2} = {}.", division(number1, number2)),
         _ => println!("Can exit with 0."),
     }
     }
