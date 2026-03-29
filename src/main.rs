@@ -1,12 +1,32 @@
-use std::io;
+use std::io::{self, Write};
 
 // USER INPUT FUNCTION
 fn user_input() -> f32{
+
+    // print!("{}", msg_to_user); // here was if you want to use &str paramerter in the function to tell users what to do
+    io::stdout().flush().expect("...");
+
     let mut input = String::new();
 
     io::stdin().read_line(&mut input).expect("Failed to read line.");
 
     input.trim().parse::<f32>().expect("Please enter a valid number")
+}
+
+// OPARATOR INPUT FUNCTION
+fn oparator_input() -> char{
+
+    // print!("{}", msg_to_user); // here was if you want to use &str paramerter in the function to tell users what to do
+
+
+    // 'Flush stdout' ensure text appears immediately when using print! macro, is Flush is not use, text will appear after user has already enter input
+    io::stdout().flush().expect("...");
+
+    let mut input = String::new();
+
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+
+    input.trim().parse::<char>().expect("Please, enter a valid oparator!")
 }
 
 // ADDITION FUNCTON
@@ -30,34 +50,43 @@ fn division(a: f32, b: f32) -> f32{
     return a / b;
 }
 
+// enum _Oparators {
+//     Add(char),
+//     Subtract(char),
+//     Multuply(char),
+//     Divide(char),
+// }
+
 fn main() {
+
+
      loop {
     //first input
-    println!("Enter the first number: ");
+    print!("Enter first Number: ");
     let number1 = user_input();
 
     //second input
-    println!("Enter the second number: ");
+    print!("Enter second Number: ");
     let number2 = user_input();
 
 
    
         println!("OPTION");
-        println!("1. Addition");
-        println!("2. Subtraction");
-        println!("3. Multiplication");
-        println!("4. Division");
+        println!("1. Add(+)");
+        println!("2. Subtract(-)");
+        println!("3. Multiply(*)");
+        println!("4. Divide(/)");
         println!("0. Exit");
 
-        println!("Choose oparator: ");
-        let oparator = user_input();
+        print!("Enter Oparator symbol: ");
+        let oparator = oparator_input();
 
            match oparator {
-        0.0 => break,
-        1.0 => println!("{number1} + {number2} = {}.", addition(number1, number2)),
-        2.0 => println!("{number1} - {number2} = {}.", subtration(number1, number2)),
-        3.0 => println!("{number1} and {number2} = {}.", multiplication(number1, number2)),
-        4.0 => println!("{number1} / {number2} = {}.", division(number1, number2)),
+        '0' => break,
+        '+' => println!("{number1} + {number2} = {}", addition(number1, number2)),
+        '-' => println!("{number1} - {number2} = {}", subtration(number1, number2)),
+        '*' => println!("{number1} x {number2} = {}", multiplication(number1, number2)),
+        '/' => println!("{number1} / {number2} = {}", division(number1, number2)),
         _ => println!("Can exit with 0."),
     }
     }
