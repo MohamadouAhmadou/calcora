@@ -1,4 +1,4 @@
-use std::io::{self, Write};
+use std::{io::{self, Write}};
 
 // USER INPUT FUNCTION
 fn user_input() -> f32{
@@ -89,9 +89,30 @@ fn main() {
         '/' => println!("{number1} / {number2} = {}", division(number1, number2)),
         _ => println!("Can exit with 0."),
     }
-    }
-  
-    
+    let mut user_default_choice = 2.0;
+
+        while user_default_choice == 2.0 {
+            println!("Type 1 to continues or 0 to exit: ");
+            let choice = user_input();
+
+            if choice == 1.0 {
+                user_default_choice -= 1.0;
+            break;
+            } else if choice == 0.0 {
+            break;
+            } else {
+                println!("Invalid!")
+            }
+        }
+
+        if user_default_choice == 2.0 {
+            break;
+        } else {
+            continue;
+        }
+
 
     //After creating all functions(subtration, multiplication, and division), loop and match will be use
+    }
+
 }
