@@ -91,7 +91,7 @@ fn main() {
     }
     let mut user_default_choice = 2.0;
 
-        while user_default_choice == 2.0 {
+        loop {
             println!("Type 1 to continues or 0 to exit: ");
             let choice = user_input();
 
