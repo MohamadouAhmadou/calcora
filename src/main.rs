@@ -31,23 +31,23 @@ fn oparator_input() -> char{
 
 // ADDITION FUNCTON
 fn addition(a: f32, b: f32) -> f32{
-    return a + b;
+    a + b
 }
 
 // SUBTRACTION FUNCTION
 fn subtration(a: f32, b: f32) -> f32 {
-    return a - b;
+    a - b
 } 
 
 // MULTIPLICATION FUNCTION
 fn multiplication(a: f32, b: f32) -> f32 {
-    return a * b;
+    a * b
 }
 
 // DIVISION FUNCTION
 fn division(a: f32, b: f32) -> f32{
    // division by zero will be handle later
-    return a / b;
+    a / b
 }
 
 // enum _Oparators {
